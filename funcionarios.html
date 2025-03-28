@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionários</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>IPlast</h1>
+    </header>
+    <main>
+        <button onclick="abrirModal()">Novo Funcionário</button>
+        <table id="tabela-funcionarios">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>E-mail</th>
+                    <th>Telefone</th>
+                    <th>Logradouro</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>João Silva</td>
+                    <td>123.456.789-00</td>
+                    <td>joao@email.com</td>
+                    <td>(11) 98765-4321</td>
+                    <td>Rua das Flores, 123</td>
+                    <td>
+                        <button onclick="editarFuncionario(this)">Editar</button>
+                        <button onclick="excluirFuncionario(this)">Excluir</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>&copy; 2025 IPlast - Todos os direitos reservados | by Heloísa</p>
+    </footer>
+
+    
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <h2>Cadastre um Funcionário</h2>
+            <form>
+                <table>
+                    <tr>
+                        <td><label for="nome">Nome:</label></td>
+                        <td><input type="text" id="nome" name="nome" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="cpf">CPF:</label></td>
+                        <td><input type="text" id="cpf" name="cpf" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">E-mail:</label></td>
+                        <td><input type="email" id="email" name="email" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="telefone">Telefone:</label></td>
+                        <td><input type="tel" id="telefone" name="telefone" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="logradouro">Logradouro:</label></td>
+                        <td><input type="text" id="logradouro" name="logradouro" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <button type="submit">Salvar</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function abrirModal() {
+           
+            document.getElementById("modal").style.display = "block";
+        }
+
+        function fecharModal() {
+            
+            document.getElementById("modal").style.display = "none";
+        }
+
+        function editarFuncionario(botao) {
+            alert("Editar funcionário");
+        }
+
+        function excluirFuncionario(botao) {
+            botao.parentNode.parentNode.remove();
+        }
+    </script>
+</body>
+</html>

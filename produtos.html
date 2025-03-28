@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>IPlast</h1>
+    </header>
+    <main>
+        <button onclick="abrirModal()">Novo Produto</button>
+        <table id="tabela-produtos">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Va. Custo</th>
+                    <th>Va. Final</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Arroz</td>
+                    <td>Arroz branco</td>
+                    <td>R$2,00</td>
+                    <td>R$10,00</td>
+                    <td>
+                        <button onclick="editarProduto(this)">Editar</button>
+                        <button onclick="excluirProduto(this)">Excluir</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>&copy; 2025 IPlast - Todos os direitos reservados | by Heloísa</p>
+    </footer>
+
+    
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <h2>Cadastre um Produto</h2>
+            <form>
+                <table>
+                    <tr>
+                        <td><label for="nome">Nome:</label></td>
+                        <td><input type="text" id="nome" name="nome" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="descricao">Descrição:</label></td>
+                        <td><input type="text" id="descricao" name="descricao" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="valorCusto">Valor Custo:</label></td>
+                        <td><input type="number" id="valorCusto" name="valorCusto" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="valorFinal">Valor Final:</label></td>
+                        <td><input type="number" id="valorFinal" name="valorFinal" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <button type="submit">Salvar</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function abrirModal() {
+            
+            document.getElementById("modal").style.display = "block";
+        }
+
+        function fecharModal() {
+            
+            document.getElementById("modal").style.display = "none";
+        }
+
+        function adicionarProduto() {
+            alert("Adicionar produto");
+        }
+
+        function editarProduto(botao) {
+            alert("Editar produto");
+        }
+
+        function excluirProduto(botao) {
+            botao.parentNode.parentNode.remove();
+        }
+    </script>
+</body>
+</html>
